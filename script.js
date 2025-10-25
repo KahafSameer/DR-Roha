@@ -71,36 +71,47 @@ class RomanticWebsite {
 
     // Music Toggle Functionality
     setupMusicToggle() {
-        this.musicToggle.addEventListener('click', () => {
+        if (!this.music || !this.musicToggle) return;
+
+        const toggleMusic = () => {
             if (this.musicPlaying) {
                 this.music.pause();
-                this.musicIcon.textContent = '🔇';
-                this.musicText.textContent = 'Play Our Song';
+                if (this.musicIcon) this.musicIcon.textContent = '🔇';
+                if (this.musicText) this.musicText.textContent = 'Play Our Song';
                 console.log('Music paused');
             } else {
                 this.music.volume = 0.3;
                 this.music.play().then(() => {
                     this.musicPlaying = true;
-                    this.musicIcon.textContent = '💖';
-                    this.musicText.textContent = 'Playing Our Song';
+                    if (this.musicIcon) this.musicIcon.textContent = '💖';
+                    if (this.musicText) this.musicText.textContent = 'Playing Our Song';
                     console.log('Music started playing!');
                 }).catch(e => {
                     console.log('Audio play failed:', e);
-                    this.musicText.textContent = 'Click to Enable Music';
+                    if (this.musicText) this.musicText.textContent = 'Click to Enable Music';
                 });
             }
-        });
+        };
+
+        // Click and touch-friendly handlers (mobile)
+        this.musicToggle.addEventListener('click', toggleMusic);
+        this.musicToggle.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            toggleMusic();
+        }, { passive: false });
 
         // Handle music events
-        this.music.addEventListener('play', () => {
-            this.musicPlaying = true;
-            this.musicIcon.textContent = '🎵';
-        });
+        if (this.music) {
+            this.music.addEventListener('play', () => {
+                this.musicPlaying = true;
+                if (this.musicIcon) this.musicIcon.textContent = '🎵';
+            });
 
-        this.music.addEventListener('pause', () => {
-            this.musicPlaying = false;
-            this.musicIcon.textContent = '🔇';
-        });
+            this.music.addEventListener('pause', () => {
+                this.musicPlaying = false;
+                if (this.musicIcon) this.musicIcon.textContent = '🔇';
+            });
+        }
     }
 
     // Floating Elements Animation

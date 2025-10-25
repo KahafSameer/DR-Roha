@@ -20,7 +20,7 @@
     </div>
 
     <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="fixed top-6 right-6 z-50 dark-mode-toggle">
+    <button id="darkModeToggle" class="fixed top-6 right-6 z-50 dark-mode-toggle" aria-label="Toggle dark mode">
         <span id="darkModeIcon" class="text-2xl">🌙</span>
     </button>
     <!-- Hero Section -->
@@ -31,8 +31,8 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </div>
         
-        <!-- Background Music -->
-        <audio id="backgroundMusic" loop preload="auto" volume="0.3">
+        <!-- Background Music (controls added for mobile accessibility) -->
+        <audio id="backgroundMusic" controls preload="auto" volume="0.3" aria-label="Background romance music">
             <source src="music/music.mp3" type="audio/mpeg">
         </audio>
         
@@ -50,11 +50,11 @@
                     this one's just for you…
                 </p>
                 <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button id="musicToggle" class="music-btn group">
+                    <button id="musicToggle" class="music-btn group" aria-label="Play or pause music">
                         <span id="musicIcon" class="text-2xl">💖</span>
                         <span id="musicText">Play Our Song</span>
                     </button>
-                    <button id="scrollDown" class="scroll-btn">
+                    <button id="scrollDown" class="scroll-btn" aria-label="Scroll to gallery">
                         <span>Discover More</span>
                         <div class="scroll-arrow">↓</div>
                     </button>
@@ -89,10 +89,83 @@
                     <span class="bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full shadow-lg">Her Smile</span>
                 </h3>
                 <div id="herGallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Images will be loaded dynamically -->
-                    <div class="loading-placeholder" style="display: none; padding: 2rem; text-align: center; color: #ec4899;">
-                        <div class="text-4xl mb-2">📷</div>
-                        <div>Loading her photos...</div>
+                    <!-- Her Beautiful Photos -->
+                    <div class="gallery-item group">
+                        <img src="assets/her/IMG-20250929-WA0021.jpg" alt="Her radiant smile" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Her radiant smile</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Her radiant smile lights up my world
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/her/IMG-20251021-WA0021.jpg" alt="Her beautiful eyes" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Her beautiful eyes</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Every glance from her eyes is poetry
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/her/IMG-20251021-WA0022.jpg" alt="Her sunshine smile" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Her sunshine smile</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            She is my sunshine on the cloudiest days
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/her/IMG-20251021-WA0023.jpg" alt="Her beauty" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Her beauty</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Her beauty takes my breath away
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/her/IMG-20251021-WA0024.jpg" alt="Her heart" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Her heart</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            She makes my heart skip a beat
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/her/IMG-20251021-WA0025.jpg" alt="Her laughter" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Her laughter</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Her laughter is my favorite melody
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,10 +176,122 @@
                     <span class="bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full shadow-lg">Us Together</span>
                 </h3>
                 <div id="weGallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Images will be loaded dynamically -->
-                    <div class="loading-placeholder" style="display: none; padding: 2rem; text-align: center; color: #ec4899;">
-                        <div class="text-4xl mb-2">📷</div>
-                        <div>Loading our photos...</div>
+                    <!-- Our Beautiful Moments Together -->
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0026.jpg" alt="Our love story" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Our love story</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Our love story continues to unfold
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0027.jpg" alt="Together we are unstoppable" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Together we are unstoppable</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Together we are unstoppable
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0028.jpg" alt="Every day with you" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Every day with you</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Every day with you is a precious gift
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0029.jpg" alt="You and me against the world" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">You and me against the world</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            You and me against the world
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0030.jpg" alt="Our memories are treasures" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Our memories are treasures</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Our memories are treasures beyond measure
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0031.jpg" alt="Forever and always" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Forever and always</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Forever and always, my love
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0032.jpg" alt="In your arms I found my home" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">In your arms I found my home</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            In your arms, I found my home
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0033.jpg" alt="Our journey together is just beginning" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">Our journey together</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            Our journey together is just beginning
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item group">
+                        <img src="assets/we/IMG-20251021-WA0034.jpg" alt="You complete me" loading="lazy" class="transition-transform duration-300 group-hover:scale-110">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💕</div>
+                                <div class="text-sm">You complete me</div>
+                            </div>
+                        </div>
+                        <div class="gallery-caption poetic-captions">
+                            You complete me in every way
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,7 +303,7 @@
         <!-- Background Elements -->
         <div class="absolute inset-0 bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100"></div>
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ec4899" fill-opacity="0.05"%3E%3Cpath d="M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-        
+
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="section-header text-center mb-16">
                 <h2 class="section-title text-4xl md:text-6xl font-dancing text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-6">
@@ -236,7 +421,7 @@
                     <span class="floating-heart">💖</span>
                     <span class="floating-heart">💝</span>
                 </div>
-                <button id="closeModal" class="modal-btn">
+                <button id="closeModal" class="modal-btn" aria-label="Close surprise modal">
                     Close
                 </button>
             </div>
@@ -246,7 +431,7 @@
     <!-- Image Modal -->
     <div id="imageModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 hidden">
         <div class="image-modal-content">
-            <button id="closeImageModal" class="image-modal-close">✕</button>
+            <button id="closeImageModal" class="image-modal-close" aria-label="Close image modal">✕</button>
             <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
             <div id="modalCaption" class="image-modal-caption"></div>
         </div>
